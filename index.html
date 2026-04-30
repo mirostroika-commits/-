@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ФЕДБАНКРОТ: Лидерство через контент</title>
+    <title>ФЕДБАНКРОТ: Стратегия Лидерства</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
@@ -29,7 +29,7 @@
         .slide-container {
             width: 100%; height: 100vh; scroll-snap-align: start;
             position: relative; background-color: var(--dark);
-            display: flex; flex-direction: column; padding: 4vh 6vw;
+            display: flex; flex-direction: column; padding: 4vh 8vw;
             overflow: hidden; justify-content: center;
             border-bottom: 1px solid rgba(197, 160, 89, 0.1);
         }
@@ -43,15 +43,14 @@
 
         .slide-container > * { z-index: 1; position: relative; }
 
-        /* BRANDING - МАСШТАБ ИСПРАВЛЕН */
         .brand-huge {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(40px, 10vw, 125px);
+            font-size: clamp(40px, 10vw, 130px);
             font-weight: 900;
             background: var(--gold-grad);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            text-align: center; line-height: 1; letter-spacing: -0.03em;
+            text-align: center; line-height: 1; letter-spacing: -0.02em;
             width: 100%; margin: 0; text-transform: uppercase;
         }
 
@@ -65,8 +64,7 @@
 
         .content-area { flex-grow: 1; display: flex; flex-direction: column; justify-content: center; width: 100%; max-width: 1100px; margin: 0 auto; }
 
-        /* LAB INTERACTIVE */
-        .lab-box { display: grid; grid-template-columns: 22vw 1fr; gap: 3vw; width: 100%; }
+        .lab-box { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 3vw; width: 100%; }
         .lab-nav { display: flex; flex-direction: column; gap: 1.5vh; }
         .tool-btn { 
             background: rgba(197, 160, 89, 0.1); border: 1px solid var(--gold); color: var(--gold); 
@@ -95,24 +93,22 @@
             color: #fff; overflow-y: auto; max-height: 22vh; 
         }
 
-        /* INVESTMENT TABLE */
+        .price-table-wrapper { width: 100%; overflow-x: auto; }
         .price-table { width: 100%; border-collapse: collapse; background: rgba(255,255,255,0.02); border-radius: 15px; overflow: hidden; }
-        .price-table th { background: rgba(197, 160, 89, 0.1); color: var(--gold); padding: 1.8vh 1.5vw; text-align: left; font-size: clamp(11px, 1.1vw, 15px); border-bottom: 2px solid var(--gold); text-transform: uppercase; }
-        .price-table td { padding: 1.8vh 1.5vw; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: clamp(12px, 1vw, 14px); }
-        .p-now { color: var(--accent-red); font-weight: 800; font-size: clamp(18px, 2vw, 28px); display: block; }
-        .p-old { text-decoration: line-through; opacity: 0.4; font-size: clamp(10px, 0.8vw, 13px); }
+        .price-table th { background: rgba(197, 160, 89, 0.1); color: var(--gold); padding: 2vh 1.5vw; text-align: left; font-size: clamp(11px, 1.2vw, 16px); border-bottom: 2px solid var(--gold); text-transform: uppercase; }
+        .price-table td { padding: 2vh 1.5vw; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: clamp(12px, 1vw, 14px); }
+        .p-now { color: var(--accent-red); font-weight: 800; font-size: clamp(18px, 2.2vw, 30px); display: block; }
+        .p-old { text-decoration: line-through; opacity: 0.4; font-size: clamp(10px, 0.8vw, 14px); }
 
-        /* DECOR */
         .badge-discount { 
             position: absolute; top: 4vh; right: 4vw; background: var(--accent-red); 
-            color: white; padding: 1vh 1.5vw; font-weight: 800; border-radius: 50px; 
-            font-size: clamp(10px, 0.9vw, 14px); transform: rotate(4deg); 
+            color: white; padding: 1.2vh 1.5vw; font-weight: 800; border-radius: 50px; 
+            font-size: clamp(10px, 0.9vw, 15px); transform: rotate(4deg); 
             box-shadow: 0 10px 20px rgba(230,57,70,0.3); z-index: 10;
         }
 
-        /* FINAL SLIDE */
         .final-hero {
-            background-image: linear-gradient(rgba(11, 26, 42, 0.9), rgba(11, 26, 42, 0.8)), url('https://images.unsplash.com/photo-1521791136064-7986c2923216?q=80&w=1469&auto=format&fit=crop');
+            background-image: linear-gradient(rgba(11, 26, 42, 0.9), rgba(11, 26, 42, 0.85)), url('https://images.unsplash.com/photo-1521791136064-7986c2923216?q=80&w=1469&auto=format&fit=crop');
             background-size: cover; background-position: center; text-align: center;
         }
 
@@ -129,18 +125,16 @@
 
 <div class="slides-wrapper">
 
-    <!-- Слайд 1: СТАТУС -->
     <section class="slide-container" id="slide1">
         <div class="content-area" style="text-align: center;">
             <p style="color: var(--gold); letter-spacing: 0.8em; font-weight: 700; text-transform: uppercase; font-size: clamp(11px, 1.2vw, 18px); margin-bottom: 2vh;">Strategic Growth Ecosystem</p>
             <div class="brand-huge">ФЕДБАНКРОТ</div>
             <h1 style="font-size: clamp(18px, 3vh, 36px); margin-top: 2vh; color: #fff; font-weight: 300; letter-spacing: 0.2em; opacity: 0.9;">ДОМИНИРОВАНИЕ НА РЫНКЕ БФЛ</h1>
             <div style="width: 15vw; height: 3px; background: var(--gold); margin: 4vh auto;"></div>
-            <p style="font-size: clamp(15px, 1.4vw, 22px); max-width: 800px; margin: 0 auto; line-height: 1.4; font-weight: 400;">Лидерство через <strong>маркетинг и контент</strong> нового поколения. Масштабирование юридического бизнеса силами ИИ-технологий и тотального доверия.</p>
+            <p style="font-size: clamp(15px, 1.4vw, 22px); max-width: 800px; margin: 0 auto; line-height: 1.4; font-weight: 400;">Лидерство через <strong>маркетинг и контент</strong> нового поколения. Масштабирование юридического бизнеса силами ИИ-технологий и доверия.</p>
         </div>
     </section>
 
-    <!-- Слайд 2: ТЕХНОЛОГИИ -->
     <section class="slide-container" id="slide2">
         <div class="content-area">
             <h2 class="slide-title">Prove-it: AI Лаборатория ФЕДБАНКРОТ</h2>
@@ -159,46 +153,46 @@
         </div>
     </section>
 
-    <!-- Слайд 3: ИНВЕСТИЦИИ -->
     <section class="slide-container" id="slide3">
         <div class="badge-discount">ВЫГОДА -20% ЗА СКОРОСТЬ</div>
         <div class="content-area">
             <h2 class="slide-title">Инвестиции в Систему Лидерства</h2>
-            <table class="price-table">
-                <thead>
-                    <tr>
-                        <th width="30%">Пакет Решений</th>
-                        <th width="45%">Состав Технологии</th>
-                        <th width="25%">Инвестиция</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>PILOT SEASON</strong></td>
-                        <td>5 виральных роликов, Базовый аудит ЦА, Стратегия актива.</td>
-                        <td><span class="p-old">35 000 ₽</span><span class="p-now">28 000 ₽</span></td>
-                    </tr>
-                    <tr>
-                        <td><strong>STANDARD PACK</strong></td>
-                        <td>25 роликов (месяц), Стратегия V3, Воронка конверсии.</td>
-                        <td><span class="p-now">96 000 ₽</span><span class="p-old">120 000 ₽</span></td>
-                    </tr>
-                    <tr>
-                        <td><strong>STRATEGIC HERO</strong></td>
-                        <td>45 роликов, Ads-пакет, Поддержка 24/7.</td>
-                        <td><span class="p-now">200 000 ₽</span><span class="p-old">250 000 ₽</span></td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="price-table-wrapper">
+                <table class="price-table">
+                    <thead>
+                        <tr>
+                            <th width="30%">Пакет Решений</th>
+                            <th width="45%">Состав Технологии</th>
+                            <th width="25%">Инвестиция</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>PILOT SEASON</strong></td>
+                            <td>5 виральных роликов, Базовый аудит ЦА, Стратегия актива.</td>
+                            <td><span class="p-old">35 000 ₽</span><span class="p-now">28 000 ₽</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>STANDARD PACK</strong></td>
+                            <td>25 роликов (месяц), Стратегия V3, Воронка конверсии.</td>
+                            <td><span class="p-now">96 000 ₽</span><span class="p-old">120 000 ₽</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>STRATEGIC HERO</strong></td>
+                            <td>45 роликов, Ads-пакет, 2 Аватара, Инфраструктура 24/7.</td>
+                            <td><span class="p-now">200 000 ₽</span><span class="p-old">250 000 ₽</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
             <p style="margin-top: 4vh; text-align: center; color: var(--accent-red); font-weight: 800; font-size: clamp(13px, 1.1vw, 18px);">*Спеццена действует при согласовании договора в течение 48 часов.</p>
         </div>
     </section>
 
-    <!-- Слайд 4: ФИНАЛ -->
     <section class="slide-container final-hero" id="slide4">
         <div class="content-area" style="text-align: center;">
             <h2 style="color: var(--gold); border: none; padding: 0; font-size: clamp(28px, 5.5vw, 64px); font-weight: 900; line-height: 1.1;">Заберите этот рынок сегодня</h2>
-            <p style="font-size: clamp(16px, 1.6vw, 24px); margin-top: 3vh; font-weight: 300; color: #fff; max-width: 800px; margin-inline: auto;">Мы строим для ФЕДБАНКРОТ фундамент лидерства, который обеспечит доминирование силами маркетинга и контента.</p>
+            <p style="font-size: clamp(16px, 1.6vw, 24px); margin-top: 3vh; font-weight: 300; color: #fff; max-width: 850px; margin-inline: auto;">Мы строим для ФЕДБАНКРОТ фундамент лидерства, который обеспечит доминирование силами маркетинга и контента.</p>
             <div style="width: 15vw; height: 4px; background: var(--gold); margin: 4vh auto;"></div>
             <h3 style="font-size: clamp(22px, 3vw, 40px); font-weight: 800; letter-spacing: 0.1em; color: var(--gold);">strategic@fedbankrot.ai</h3>
             <p style="margin-top: 3vh; font-weight: 700; text-transform: uppercase; letter-spacing: 0.2em; opacity: 0.8; font-size: 13px;">Ваша инфраструктура готова к запуску</p>
