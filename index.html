@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ФЕДБАНКРОТ: Маркетинговая Архитектура 2025</title>
+    <title>ФЕДБАНКРОТ: Стратегическая Архитектура 2025</title>
+    <!-- Подключение шрифтов и иконок -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
     <style>
         :root {
             --gold: #C5A059;
@@ -24,7 +26,7 @@
             line-height: 1.4;
         }
         
-        /* Presentation scroll-snap engine */
+        /* Механика слайдов с прилипанием */
         .slides-wrapper { 
             width: 100%; 
             height: 100vh; 
@@ -46,6 +48,7 @@
             overflow: hidden;
         }
 
+        /* Премиальный фон с градиентами */
         .slide-container::before {
             content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
             background: radial-gradient(circle at 100% 0%, rgba(197, 160, 89, 0.05) 0%, transparent 40%),
@@ -55,10 +58,10 @@
 
         .slide-container > * { z-index: 1; position: relative; }
 
-        /* TYPOGRAPHY */
+        /* БРЕНДИНГ И ЗАГОЛОВКИ */
         .brand-huge {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(40px, 10vw, 120px);
+            font-size: clamp(36px, 9vw, 110px);
             font-weight: 900;
             background: var(--gold-grad);
             -webkit-background-clip: text;
@@ -69,98 +72,92 @@
 
         h2.slide-title {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(20px, 3.2vh, 36px);
+            font-size: clamp(18px, 3vh, 32px);
             color: var(--gold); margin-bottom: 2vh;
-            border-left: 0.5vw solid var(--gold); padding-left: 2vw;
+            border-left: 5px solid var(--gold); padding-left: 15px;
             text-transform: uppercase; letter-spacing: 0.1em;
         }
 
-        h3 { font-size: clamp(16px, 2vh, 26px); color: #fff; margin-bottom: 1vh; font-weight: 600; }
-        p { font-size: clamp(14px, 1vw, 18px); line-height: 1.5; color: var(--light); font-weight: 300; }
+        h3 { font-size: clamp(16px, 2.2vh, 24px); color: #fff; margin-bottom: 1vh; font-weight: 600; }
+        p { font-size: clamp(13px, 1vw, 17px); line-height: 1.5; color: var(--light); font-weight: 300; }
 
-        /* INTEL SECTION LAYOUT */
-        .intel-layout { display: grid; grid-template-columns: 1fr 300px; gap: 40px; align-items: start; }
-        .grid-intel { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
+        /* ГЛУБИННАЯ РАЗВЕДКА: СЕТКА ФАЗ */
+        .intel-layout { display: grid; grid-template-columns: 1fr 280px; gap: 30px; align-items: start; }
+        .grid-intel { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
         .m-card { 
             background: rgba(255,255,255,0.03); 
-            padding: 2vh 1.5vw; 
-            border-radius: 12px; 
+            padding: 2vh 1.2vw; 
+            border-radius: 10px; 
             border: 1px solid rgba(197, 160, 89, 0.1); 
-            transition: 0.3s; 
+            transition: 0.3s;
         }
-        .m-card:hover { border-color: var(--gold); background: rgba(255,255,255,0.06); }
-        .m-num { font-family: 'Playfair Display', serif; font-size: 16px; color: var(--gold); font-weight: 700; margin-bottom: 5px; display: block; }
-        .m-card h3 { font-size: 18px; margin-bottom: 8px; }
-        .m-card p { font-size: 13px; line-height: 1.3; }
+        .m-card:hover { border-color: var(--gold); background: rgba(255,255,255,0.05); }
+        .m-num { font-family: 'Playfair Display', serif; font-size: 14px; color: var(--gold); font-weight: 700; margin-bottom: 5px; display: block; }
 
-        /* STANDARD RESEARCH LIST */
-        .standard-list { 
+        /* ЭКОНОМИЧЕСКИЙ СТЕК */
+        .standard-box { 
             background: rgba(197, 160, 89, 0.05); 
-            padding: 25px; 
-            border-radius: 15px; 
+            padding: 20px; 
+            border-radius: 12px; 
             border: 1px dashed var(--gold);
         }
-        .standard-list h4 { color: var(--gold); text-transform: uppercase; font-size: 14px; letter-spacing: 2px; margin-bottom: 15px; border-bottom: 1px solid rgba(197,160,89,0.3); padding-bottom: 10px; }
-        .standard-list ul { list-style: none; padding: 0; margin: 0; }
-        .standard-list li { font-size: 13px; margin-bottom: 10px; display: flex; align-items: center; gap: 10px; opacity: 0.8; }
-        .standard-list li i { color: var(--gold); font-size: 10px; }
+        .standard-box h4 { color: var(--gold); font-size: 13px; margin-bottom: 12px; text-transform: uppercase; border-bottom: 1px solid rgba(197,160,89,0.2); padding-bottom: 8px; }
+        .standard-box ul { list-style: none; padding: 0; margin: 0; }
+        .standard-box li { font-size: 12px; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; opacity: 0.8; }
 
-        /* FUNNEL VISUAL */
-        .funnel-wrap { display: flex; flex-direction: column; gap: 8px; width: 100%; max-width: 600px; margin: 0 auto; }
+        /* ВИДЕО ПЛЕЕР (SHORTS FORMAT) */
+        .video-wrapper {
+            width: 100%;
+            max-width: 320px;
+            max-height: 70vh;
+            aspect-ratio: 9/16;
+            margin: 0 auto;
+            background: #000;
+            border: 2px solid var(--gold);
+            border-radius: 15px;
+            box-shadow: 0 0 40px rgba(197,160,89,0.3);
+            overflow: hidden;
+        }
+        .video-wrapper iframe { width: 100%; height: 100%; border: none; }
+
+        /* ВОРОНКА ПРОДАЖ */
+        .funnel-wrap { display: flex; flex-direction: column; gap: 6px; width: 100%; max-width: 500px; margin: 0 auto; }
         .funnel-part { 
-            background: rgba(197, 160, 89, 0.1); border: 1px solid var(--gold); padding: 2vh; 
+            background: rgba(197, 160, 89, 0.1); border: 1px solid var(--gold); padding: 15px; 
             text-align: center; clip-path: polygon(5% 0%, 95% 0%, 100% 100%, 0% 100%); 
-            transition: 0.3s; font-weight: 600; font-size: clamp(12px, 1vw, 18px);
+            font-weight: 600; font-size: 14px; transition: 0.3s;
         }
         .funnel-part:hover { background: var(--gold); color: #000; }
 
-        /* INTERACTIVE PANEL */
-        .lab-box { display: grid; grid-template-columns: 250px 1fr; gap: 30px; width: 100%; }
-        .lab-nav { display: flex; flex-direction: column; gap: 10px; }
+        /* ИИ ЛАБОРАТОРИЯ */
+        .lab-box { display: grid; grid-template-columns: 220px 1fr; gap: 20px; width: 100%; }
         .tool-btn { 
             background: rgba(197, 160, 89, 0.1); border: 1px solid var(--gold); color: var(--gold); 
-            padding: 15px 20px; border-radius: 10px; cursor: pointer; text-align: left; 
-            font-family: inherit; font-weight: 700; font-size: 15px; transition: 0.3s;
+            padding: 12px 15px; border-radius: 8px; cursor: pointer; text-align: left; 
+            font-family: inherit; font-weight: 700; font-size: 13px; margin-bottom: 10px; width: 100%;
         }
-        .tool-btn.active { background: var(--gold); color: var(--dark); box-shadow: 0 0 20px rgba(197,160,89,0.4); }
-        .lab-view { 
-            background: rgba(255, 255, 255, 0.03); border-radius: 20px; 
-            padding: 30px; border: 1px solid rgba(255,255,255,0.1);
-        }
-        textarea { 
-            width: 100%; background: var(--dark); border: 1px solid rgba(197, 160, 89, 0.3); 
-            color: #fff; padding: 15px; border-radius: 10px; font-family: inherit; 
-            font-size: 16px; resize: none; margin-bottom: 20px;
-        }
-        .btn-run { 
-            background: var(--gold); color: var(--dark); border: none; 
-            padding: 12px 40px; border-radius: 50px; font-weight: 800; 
-            cursor: pointer; display: flex; align-items: center; gap: 10px; font-size: 16px;
-        }
-        .res-out { 
-            margin-top: 20px; padding: 20px; background: rgba(0,0,0,0.5); 
-            border-radius: 10px; border-left: 5px solid var(--gold); 
-            font-size: 15px; line-height: 1.5; white-space: pre-wrap; 
-            color: #fff; max-height: 200px; overflow-y: auto;
-        }
+        .tool-btn.active { background: var(--gold); color: var(--dark); box-shadow: 0 0 15px rgba(197,160,89,0.3); }
+        .lab-view { background: rgba(255, 255, 255, 0.03); border-radius: 15px; padding: 25px; border: 1px solid rgba(255,255,255,0.1); }
+        textarea { width: 100%; background: var(--dark); border: 1px solid rgba(197, 160, 89, 0.3); color: #fff; padding: 12px; border-radius: 8px; font-size: 14px; resize: none; margin-bottom: 15px; }
+        .btn-run { background: var(--gold); color: var(--dark); border: none; padding: 10px 30px; border-radius: 50px; font-weight: 800; cursor: pointer; font-size: 14px; }
+        .res-out { margin-top: 15px; padding: 15px; background: rgba(0,0,0,0.5); border-radius: 10px; border-left: 4px solid var(--gold); font-size: 14px; line-height: 1.4; white-space: pre-wrap; color: #fff; max-height: 150px; overflow-y: auto; }
 
-        /* PRICE TABLE */
-        .price-table { width: 100%; border-collapse: collapse; background: rgba(255,255,255,0.02); border-radius: 15px; overflow: hidden; }
-        .price-table th { background: rgba(197, 160, 89, 0.15); color: var(--gold); padding: 20px; text-align: left; font-size: clamp(14px, 1.2vw, 18px); border-bottom: 3px solid var(--gold); text-transform: uppercase; }
-        .price-table td { padding: 15px 20px; border-bottom: 1px solid rgba(255,255,255,0.1); font-size: clamp(13px, 1.1vw, 16px); }
-        .p-now { color: var(--accent-red); font-weight: 800; font-size: clamp(20px, 2vw, 28px); display: block; }
-        .p-old { text-decoration: line-through; opacity: 0.4; font-size: 14px; margin-right: 10px; }
+        /* ИНВЕСТИЦИИ */
+        .price-table { width: 100%; border-collapse: collapse; background: rgba(255,255,255,0.02); border-radius: 12px; overflow: hidden; }
+        .price-table th { background: rgba(197, 160, 89, 0.15); color: var(--gold); padding: 15px; text-align: left; font-size: 14px; border-bottom: 2px solid var(--gold); text-transform: uppercase; }
+        .price-table td { padding: 12px 15px; border-bottom: 1px solid rgba(255,255,255,0.1); font-size: 13px; }
+        .p-now { color: var(--accent-red); font-weight: 800; font-size: 22px; display: block; }
 
-        /* NAVIGATION BUTTONS */
+        /* КНОПКИ НАВИГАЦИИ */
         .btn-start { 
-            background: var(--gold); color: #000; padding: 18px 50px; 
+            background: var(--gold); color: #000; padding: 15px 40px; 
             border-radius: 50px; text-decoration: none; font-weight: 800; 
-            font-size: clamp(18px, 2vw, 24px); display: inline-block; margin-top: 30px; 
+            font-size: 18px; display: inline-block; margin-top: 20px; 
             box-shadow: 0 10px 30px rgba(197,160,89,0.3); transition: 0.3s;
         }
         .btn-start:hover { transform: scale(1.05); }
 
-        .loader { display: none; border: 3px solid rgba(197, 160, 89, 0.2); border-radius: 50%; border-top: 3px solid var(--gold); width: 20px; height: 20px; animation: spin 1s linear infinite; }
+        .loader { display: none; border: 2px solid rgba(197, 160, 89, 0.2); border-radius: 50%; border-top: 2px solid var(--gold); width: 16px; height: 16px; animation: spin 1s linear infinite; }
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
 
         .slide-final {
@@ -168,11 +165,11 @@
             background-size: cover; background-position: center; text-align: center;
         }
 
-        @keyframes bounce { 0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 40% {transform: translateY(-10px);} 60% {transform: translateY(-5px);} }
-
-        @media (max-width: 1000px) {
-            .intel-layout { grid-template-columns: 1fr; }
-            .standard-list { display: none; } /* Скрываем на мобилках для сохранения масштаба */
+        @media (max-width: 900px) {
+            .intel-layout, .lab-box { grid-template-columns: 1fr; }
+            .slide-container { padding: 30px 5vw; }
+            .grid-intel { grid-template-columns: 1fr 1fr; }
+            .standard-box { display: none; }
         }
     </style>
 </head>
@@ -180,31 +177,31 @@
 
 <div class="slides-wrapper">
 
-    <!-- Slide 1: ТИТУЛЬНЫЙ -->
+    <!-- Слайд 1: ТИТУЛЬНЫЙ -->
     <section class="slide-container" id="slide1">
         <div style="text-align: center;">
-            <p style="color: var(--gold); letter-spacing: 1vw; font-weight: 700; text-transform: uppercase; font-size: 14px; margin-bottom: 2vh;">Strategic Intelligence & AI Architecture</p>
+            <p style="color: var(--gold); letter-spacing: 1vw; font-weight: 700; text-transform: uppercase; font-size: 12px; margin-bottom: 2vh;">Strategic Intelligence & Marketing Architecture</p>
             <div class="brand-huge">ФЕДБАНКРОТ</div>
-            <h1 style="font-size: clamp(20px, 3.5vh, 44px); color: #fff; font-weight: 300; letter-spacing: 0.2em; margin-top: 2vh;">ЛИДЕРСТВО ЧЕРЕЗ КОНТЕНТ</h1>
-            <p style="max-width: 800px; margin: 30px auto; font-size: clamp(16px, 1.4vw, 24px); opacity: 0.8; font-weight: 300;">Переход от классической юридической фирмы к технологичному лидеру рынка БФЛ силами маркетинга нового поколения.</p>
+            <h1 style="font-size: clamp(18px, 3vh, 32px); color: #fff; font-weight: 300; letter-spacing: 0.2em; margin-top: 2vh;">ЛИДЕРСТВО ЧЕРЕЗ КОНТЕНТ</h1>
+            <p style="max-width: 800px; margin: 30px auto; font-size: clamp(15px, 1.4vw, 22px); opacity: 0.8; font-weight: 300;">Переход от классической юридической фирмы к технологичному лидеру рынка БФЛ силами маркетинга нового поколения.</p>
             <a href="#slide2" class="btn-start">НАЧАТЬ МАРШРУТ</a>
         </div>
     </section>
 
-    <!-- Slide 2: ГЛУБИННАЯ РАЗВЕДКА (EXPANDED) -->
+    <!-- Слайд 2: ГЛУБИННАЯ РАЗВЕДКА (МАРКЕТИНГОВЫЙ БЛОК) -->
     <section class="slide-container" id="slide2">
-        <h2 class="slide-title">1. Глубинная Разведка (Intelligence Architecture)</h2>
+        <h2 class="slide-title">1. Глубинная Разведка (Deep Intelligence)</h2>
         <div class="intel-layout">
             <div class="grid-intel">
                 <div class="m-card">
                     <span class="m-num">ФАЗА 01</span>
                     <h3>Zero-Footprint</h3>
-                    <p>Анализ паттернов поведения должника 24/7. Поиск «точки невозврата».</p>
+                    <p>Анализ паттернов поведения должника 24/7. Мы знаем момент «точки невозврата».</p>
                 </div>
                 <div class="m-card">
                     <span class="m-num">ФАЗА 02</span>
                     <h3>Теневые Архетипы</h3>
-                    <p>Психографика стыда и страха. Попадание в 100% болей ЦА.</p>
+                    <p>Психографика стыда и страха. Попадание в 100% болей аудитории.</p>
                 </div>
                 <div class="m-card">
                     <span class="m-num">ФАЗА 03</span>
@@ -214,7 +211,7 @@
                 <div class="m-card">
                     <span class="m-num">ФАЗА 04</span>
                     <h3>Benchmarking</h3>
-                    <p>Конкурентная разведка ТОП-10 игроков рынка БФЛ и их слабых зон.</p>
+                    <p>Анализ ТОП-10 игроков рынка БФЛ и деконструкция их стратегий.</p>
                 </div>
                 <div class="m-card">
                     <span class="m-num">ФАЗА 05</span>
@@ -224,73 +221,79 @@
                 <div class="m-card">
                     <span class="m-num">ФАЗА 06</span>
                     <h3>Stress-Test</h3>
-                    <p>Верификация гипотез через ИИ-моделирование реакции аудитории.</p>
+                    <p>ИИ-моделирование реакции аудитории на предложенные офферы.</p>
                 </div>
             </div>
-            <div class="standard-list">
-                <h4>Базовый стек</h4>
+            <div class="standard-box">
+                <h4>Экономический стек:</h4>
                 <ul>
-                    <li><i class="fas fa-check"></i> SWOT/PEST-аналитика</li>
-                    <li><i class="fas fa-check"></i> Оценка TAM/SAM/SOM</li>
-                    <li><i class="fas fa-check"></i> Сегментация (5W)</li>
-                    <li><i class="fas fa-check"></i> Построение CJM</li>
-                    <li><i class="fas fa-check"></i> Unit-экономика воронки</li>
-                    <li><i class="fas fa-check"></i> Аудит репутации (SERM)</li>
+                    <li><i class="fas fa-check" style="color:var(--gold)"></i> SWOT / PEST анализ</li>
+                    <li><i class="fas fa-check" style="color:var(--gold)"></i> Оценка TAM/SAM/SOM</li>
+                    <li><i class="fas fa-check" style="color:var(--gold)"></i> Построение CJM</li>
+                    <li><i class="fas fa-check" style="color:var(--gold)"></i> Unit-экономика воронки</li>
+                    <li><i class="fas fa-check" style="color:var(--gold)"></i> Сегментация (5W)</li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <!-- Slide 3: ВОРОНКА -->
+    <!-- Слайд 3: ВОРОНКА -->
     <section class="slide-container" id="slide3">
-        <h2 class="slide-title">2. Архитектура Воронки</h2>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; align-items: center;">
+        <h2 class="slide-title">2. Архитектура Контент-Воронки</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; align-items: center;">
             <div>
                 <h3>Конвейер Доверия</h3>
-                <p>Мы строим систему, где каждый просмотр превращается в квалифицированный лид без участия менеджера.</p>
-                <ul style="list-style: none; padding: 0; margin-top: 3vh; font-size: clamp(14px, 1.1vw, 20px);">
-                    <li style="margin-bottom: 15px;"><i class="fas fa-check" style="color: var(--gold); margin-right: 15px;"></i> Виральные триггеры внимания.</li>
-                    <li style="margin-bottom: 15px;"><i class="fas fa-check" style="color: var(--gold); margin-right: 15px;"></i> ИИ-прогрев в мессенджерах.</li>
-                    <li style="margin-bottom: 15px;"><i class="fas fa-check" style="color: var(--gold); margin-right: 15px;"></i> Снятие скепсиса за 60 секунд.</li>
-                </ul>
+                <p>Мы строим систему, где каждый просмотр превращается в квалифицированный лид без участия человека.</p>
+                <div class="funnel-wrap" style="margin-top: 20px;">
+                    <div class="funnel-part" style="width: 100%;">ОХВАТ (ВИРАЛЬНЫЙ КОНТЕНТ)</div>
+                    <div class="funnel-part" style="width: 85%; margin: 0 auto;">ДОВЕРИЕ (ИИ-ДИАГНОСТИКА)</div>
+                    <div class="funnel-part" style="width: 70%; margin: 0 auto; background: var(--gold); color: #000; font-weight: 800;">КОНВЕРСИЯ (ДОГОВОР)</div>
+                </div>
             </div>
-            <div class="funnel-wrap">
-                <div class="funnel-part" style="width: 100%;">ВИРАЛЬНЫЙ КОНТЕНТ (ОХВАТ)</div>
-                <div class="funnel-part" style="width: 85%; margin: 0 auto;">ИИ-КВИЗ И ДИАГНОСТИКА (ДОВЕРИЕ)</div>
-                <div class="funnel-part" style="width: 70%; margin: 0 auto;">ПЕРСОНАЛЬНОЕ ВИДЕО (ПРОГРЕВ)</div>
-                <div class="funnel-part" style="width: 55%; margin: 0 auto; background: var(--gold); color: #000; border: none; font-weight: 800;">ДОГОВОР (КОНВЕРСИЯ)</div>
+            <div style="background: rgba(255,255,255,0.02); padding: 25px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.1);">
+                <h3>Ключевые KPI</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 10px;"><i class="fas fa-chart-line" style="color:var(--gold); margin-right:15px"></i> Снижение CPL в 2.5 раза</li>
+                    <li style="margin-bottom: 10px;"><i class="fas fa-user-check" style="color:var(--gold); margin-right:15px"></i> Рост LTV через контент</li>
+                    <li style="margin-bottom: 10px;"><i class="fas fa-shield-alt" style="color:var(--gold); margin-right:15px"></i> Защита доли рынка (IP)</li>
+                </ul>
             </div>
         </div>
     </section>
 
-    <!-- Slide 4: ПЕРЕХОД -->
-    <section class="slide-container" id="slide4" style="background-color: #050d16; text-align: center;">
-        <h2 style="color: var(--gold); font-size: clamp(32px, 6vh, 64px); margin-bottom: 20px; border: none; padding: 0;">Готовы к магии?</h2>
-        <p style="font-size: clamp(18px, 1.8vw, 28px); max-width: 850px; margin: 0 auto; font-weight: 300;">Ниже — интерактивная Лаборатория ФЕДБАНКРОТ. Активируйте ИИ-инструменты прямо в браузере.</p>
-        <i class="fas fa-chevron-down" style="font-size: 40px; color: var(--gold); margin-top: 50px; animation: bounce 2s infinite;"></i>
+    <!-- Слайд 4: ВИДЕО (ВАШ РОЛИК) -->
+    <section class="slide-container" id="slide4">
+        <h2 class="slide-title">3. Видео-презентация Проекта</h2>
+        <div class="video-wrapper">
+            <!-- Ссылка на YouTube Shorts адаптирована для встраивания -->
+            <iframe src="https://www.youtube.com/embed/CYI_wufa1W8?rel=0&modestbranding=1" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen></iframe>
+        </div>
+        <p style="text-align: center; margin-top: 15px; font-style: italic; opacity: 0.6;">Визуальное воплощение стратегии доминирования.</p>
     </section>
 
-    <!-- Slide 5: AI ЛАБОРАТОРИЯ -->
+    <!-- Слайд 5: AI ЛАБОРАТОРИЯ (WOW-ЭФФЕКТ) -->
     <section class="slide-container" id="slide5">
-        <h2 class="slide-title">3. Prove-it: AI Лаборатория</h2>
-        <div class="lab-grid">
+        <h2 class="slide-title">4. Prove-it: AI Лаборатория ФЕДБАНКРОТ</h2>
+        <div class="lab-box">
             <div class="lab-nav">
                 <button class="tool-btn active" onclick="switchTool('script', event)"><i class="fas fa-magic"></i> Сценарий Reels</button>
                 <button class="tool-btn" onclick="switchTool('stress', event)"><i class="fas fa-user-ninja"></i> Стресс-тест оффера</button>
             </div>
             <div class="lab-view">
-                <h3 id="lab-title" style="margin-top: 0;">Сценарий Reels</h3>
-                <textarea id="lab-input" rows="3" placeholder="Введите ключевую боль клиента (например: списали пособия)..."></textarea>
-                <button id="run-btn" class="btn-run" onclick="runAI()"><span>Сгенерировать</span><div id="btn-loader" class="loader"></div></button>
+                <h3 id="lab-title" style="margin-top: 0; font-size: 18px;">Сценарий Reels</h3>
+                <textarea id="lab-input" rows="3" placeholder="Введите проблему лида (например: списали детские пособия)..."></textarea>
+                <button id="run-btn" class="btn-run" onclick="runAI()"><span>Сгенерировать решение</span><div id="btn-loader" class="loader"></div></button>
                 <div id="lab-result" class="res-out" style="display: none;"></div>
             </div>
         </div>
     </section>
 
-    <!-- Slide 6: ИНВЕСТИЦИИ -->
+    <!-- Слайд 6: ИНВЕСТИЦИИ -->
     <section class="slide-container" id="slide6">
-        <div style="position: absolute; top: 40px; right: 8vw; background: var(--accent-red); padding: 12px 30px; border-radius: 50px; font-weight: 800; transform: rotate(5deg); box-shadow: 0 10px 20px rgba(230,57,70,0.3);">ВЫГОДА -20% ЗА СКОРОСТЬ</div>
-        <h2 class="slide-title">4. Инвестиции в Лидерство</h2>
+        <div style="position: absolute; top: 30px; right: 5vw; background: var(--accent-red); padding: 10px 20px; border-radius: 50px; font-weight: 800; transform: rotate(5deg); font-size: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.3);">ВЫГОДА -20% ЗА СКОРОСТЬ</div>
+        <h2 class="slide-title">5. Инвестиции в Систему Лидерства</h2>
         <table class="price-table">
             <thead>
                 <tr>
@@ -302,13 +305,13 @@
             <tbody>
                 <tr>
                     <td><strong>PILOT SEASON</strong></td>
-                    <td>5 виральных роликов, Базовый аудит, Образ актива.</td>
-                    <td><span class="p-old">35 000 ₽</span><span class="p-now">28 000 ₽</span></td>
+                    <td>5 виральных роликов, Базовый аудит ЦА, Стратегия актива.</td>
+                    <td><span class="p-now">28 000 ₽</span></td>
                 </tr>
                 <tr>
                     <td><strong>STANDARD PACK</strong></td>
-                    <td>25 роликов (месяц), Стратегия V3, AI-Воронка.</td>
-                    <td><span class="p-old">120 000 ₽</span><span class="p-now">96 000 ₽</span></td>
+                    <td>25 роликов (месяц), Глубокая стратегия V3, AI-Воронка.</td>
+                    <td><span class="p-now">96 000 ₽</span></td>
                 </tr>
                 <tr>
                     <td><strong>STRATEGIC HERO</strong></td>
@@ -317,28 +320,28 @@
                 </tr>
             </tbody>
         </table>
-        <p style="margin-top: 30px; text-align: center; color: var(--accent-red); font-weight: 800; font-size: 18px;">*Спеццена фиксируется при согласовании договора в течение 48 часов.</p>
+        <p style="margin-top: 20px; text-align: center; color: var(--accent-red); font-weight: 800; font-size: 15px;">*Спеццена фиксируется при согласовании договора в течение 48 часов.</p>
     </section>
 
-    <!-- Slide 7: ФИНАЛ -->
+    <!-- Слайд 7: ФИНАЛ -->
     <section class="slide-container slide-final" id="slide7">
         <div style="text-align: center;">
-            <h2 style="color: var(--gold); border: none; font-size: clamp(30px, 6vh, 72px); font-weight: 900; line-height: 1.1; margin: 0;">Заберите этот рынок сегодня</h2>
-            <div style="width: 150px; height: 5px; background: var(--gold); margin: 4vh auto;"></div>
-            <p style="font-size: clamp(16px, 1.8vw, 28px); margin-top: 20px; font-weight: 300; color: #fff; max-width: 850px; margin-inline: auto;">Мы строим для ФЕДБАНКРОТ фундамент, который невозможно скопировать силами обычных агентств.</p>
-            <h3 style="font-size: clamp(22px, 3.5vw, 44px); font-weight: 800; letter-spacing: 0.1em; color: var(--gold); margin-top: 5vh;">strategic@fedbankrot.ai</h3>
-            <p style="margin-top: 30px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.2em; opacity: 0.8; font-size: 13px;">Инфраструктура готова к запуску</p>
+            <h2 style="color: var(--gold); border: none; font-size: clamp(24px, 5vh, 60px); font-weight: 900; line-height: 1.1; margin: 0;">Заберите этот рынок сегодня</h2>
+            <div style="width: 120px; height: 4px; background: var(--gold); margin: 3vh auto;"></div>
+            <p style="font-size: clamp(16px, 1.8vw, 26px); margin-top: 20px; font-weight: 300; color: #fff; max-width: 800px; margin-inline: auto;">Мы строим для ФЕДБАНКРОТ фундамент, который невозможно скопировать силами обычных агентств.</p>
+            <h3 style="font-size: clamp(20px, 3.5vw, 38px); font-weight: 800; letter-spacing: 0.1em; color: var(--gold); margin-top: 4vh;">strategic@fedbankrot.ai</h3>
+            <p style="margin-top: 20px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.2em; opacity: 0.8; font-size: 12px;">Ваша новая архитектура готова к запуску</p>
         </div>
     </section>
 
 </div>
 
 <script>
-    const apiKey = ""; 
+    const apiKey = ""; // API ключ предоставляется средой выполнения
     let currentTool = 'script';
     const tools = {
-        script: { title: "Сценарий Reels", prompt: "Создай сценарий ФЕДБАНКРОТ-ролика по боли: 'INPUT'. Структура: ХУК, БОЛЬ, КРАХ, ДНО, МЕХАНИЗМ, CTA. Тон: Доверительный." },
-        stress: { title: "Стресс-тест оффера", prompt: "Твое предложение: 'INPUT'. Выступи как жесткий хейтер-должник, а затем напиши ответ от ФЕДБАНКРОТ с пруфами." }
+        script: { title: "Сценарий Reels", prompt: "Создай сценарий ФЕДБАНКРОТ-ролика по боли: 'INPUT'. Структура: ХУК, БОЛЬ, КРАХ, МЕХАНИЗМ, CTA. Тон: Доверительный." },
+        stress: { title: "Стресс-тест оффера", prompt: "Твое предложение: 'INPUT'. Выступи как жесткий хейтер, а затем напиши ответ от ФЕДБАНКРОТ с пруфами." }
     };
 
     function switchTool(tool, event) {
@@ -358,21 +361,34 @@
         const result = document.getElementById('lab-result');
         btn.disabled = true; loader.style.display = "block"; result.style.display = "none";
 
+        // Реализация экспоненциальной задержки для API
+        const fetchWithRetry = async (url, options, retries = 5, backoff = 1000) => {
+            try {
+                const response = await fetch(url, options);
+                if (!response.ok) throw new Error('API Error');
+                return await response.json();
+            } catch (err) {
+                if (retries <= 0) throw err;
+                await new Promise(resolve => setTimeout(resolve, backoff));
+                return fetchWithRetry(url, options, retries - 1, backoff * 2);
+            }
+        };
+
         try {
             const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
-            const response = await fetch(url, {
+            const data = await fetchWithRetry(url, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
                     contents: [{ parts: [{ text: tools[currentTool].prompt.replace('INPUT', input) }] }],
-                    systemInstruction: { parts: [{ text: "Ты — аналитик ФЕДБАНКРОТ по маркетингу и ИИ. Отвечай ёмко на русском языке. Сфокусируйся на пользе для бизнеса." }] }
+                    systemInstruction: { parts: [{ text: "Ты — аналитик ФЕДБАНКРОТ. Отвечай кратко, экспертно, на русском языке." }] }
                 })
             });
-            const data = await response.json();
-            result.innerText = data.candidates?.[0]?.content?.parts?.[0]?.text || "Пустой ответ";
+            
+            result.innerText = data.candidates?.[0]?.content?.parts?.[0]?.text || "Попробуйте другое описание.";
             result.style.display = "block";
         } catch (e) {
-            result.innerText = "ИИ временно недоступен. Попробуйте еще раз.";
+            result.innerText = "ИИ временно перегружен. Попробуйте через минуту.";
             result.style.display = "block";
         } finally {
             btn.disabled = false; loader.style.display = "none";
