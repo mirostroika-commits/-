@@ -243,7 +243,7 @@
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; align-items: center;">
             <div>
                 <h3>Конвейер Доверия</h3>
-                <p>Мы строим систему, где каждый просмотр превращается в квалифицированный лид без участия человека.</p>
+                <p>Мы строиим систему, где каждый просмотр превращается в квалифицированный лид без участия человека.</p>
                 <div class="funnel-wrap" style="margin-top: 20px;">
                     <div class="funnel-part" style="width: 100%;">ОХВАТ (ВИРАЛЬНЫЙ КОНТЕНТ)</div>
                     <div class="funnel-part" style="width: 85%; margin: 0 auto;">ДОВЕРИЕ (ИИ-ДИАГНОСТИКА)</div>
@@ -340,7 +340,7 @@
     const apiKey = ""; // API ключ предоставляется средой выполнения
     let currentTool = 'script';
     const tools = {
-        script: { title: "Сценарий Reels", prompt: "Создай сценарий ФЕДБАНКРОТ-ролика по боли: 'INPUT'. Структура: ХУК, БОЛЬ, КРАХ, МЕХАНИЗМ, CTA. Тон: Доверительный." },
+        script: { title: "Сценарий Reels", prompt: "Создай сценарий ФЕДБАНКРОТ-ролика по боли: 'INPUT'. Структура: ХУК, БОЛЬ, КРАХ, ДНО, МЕХАНИЗМ, CTA. Тон: Доверительный." },
         stress: { title: "Стресс-тест оффера", prompt: "Твое предложение: 'INPUT'. Выступи как жесткий хейтер, а затем напиши ответ от ФЕДБАНКРОТ с пруфами." }
     };
 
@@ -375,7 +375,8 @@
         };
 
         try {
-            const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2026:generateContent?key=${apiKey}`;
+            // Исправлена версия модели с 2026 на 2025 (техническое имя в API)
+            const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
             const data = await fetchWithRetry(url, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
